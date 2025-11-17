@@ -28,7 +28,7 @@ python warmer.py --files <csv_file1> [<csv_file2> ...] [--threads <number_of_thr
 
 - `--files`: One or more CSV files containing URLs to warm up (required)
 - `--threads`: Number of threads to use for parallel requests (default: 5)
-- `--timeout`: Time tow ait for the response to be completed (default: 10)
+- `--timeout`: Time to wait for the response to be completed (default: 10)
 
 ### Configuration File
 
