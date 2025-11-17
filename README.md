@@ -23,11 +23,12 @@ This tool sends HTTP GET requests to a list of URLs to warm up the cache and det
 ### Command Line Arguments
 
 ```bash
-python warmer.py --files <csv_file1> [<csv_file2> ...] [--threads <number_of_threads>]
+python warmer.py --files <csv_file1> [<csv_file2> ...] [--threads <number_of_threads>] [--timeout <timeout_in_seconds>]
 ```
 
 - `--files`: One or more CSV files containing URLs to warm up (required)
 - `--threads`: Number of threads to use for parallel requests (default: 5)
+- `--timeout`: Time tow ait for the response to be completed (default: 10)
 
 ### Configuration File
 
@@ -87,7 +88,7 @@ The script displays:
 ## Example
 
 ```bash
-python warmer.py --files urls.csv --threads 10
+python warmer.py --files urls.csv --threads 10  --timeout 15
 ```
 
 This will:
