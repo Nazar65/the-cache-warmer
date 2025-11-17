@@ -6,6 +6,8 @@ A Python script to warm up URLs and check cache performance by sending GET reque
 
 This tool sends HTTP GET requests to a list of URLs to warm up the cache and determine whether the responses come from cache (HIT) or are fresh requests (MISS). It supports multiple configuration profiles to test different headers and cookies.
 
+![screenshot](images/screenshot.png)
+
 ## Requirements
 
 - Python 3.6+
@@ -19,7 +21,7 @@ This tool sends HTTP GET requests to a list of URLs to warm up the cache and det
 ### Command Line Arguments
 
 ```bash
-python warmer/burpee-requests.py --files <csv_file1> [<csv_file2> ...] [--threads <number_of_threads>]
+python warmer.py --files <csv_file1> [<csv_file2> ...] [--threads <number_of_threads>]
 ```
 
 - `--files`: One or more CSV files containing URLs to warm up (required)
@@ -70,7 +72,7 @@ https://example.com/page3
 Logs are written to the console using the Rich logging handler. No separate log files are created by default. If you need to redirect logs to a file, you can do so using shell redirection:
 
 ```bash
-python warmer/burpee-requests.py --files urls.csv > app.log 2>&1
+python warmer.py --files urls.csv > app.log 2>&1
 ```
 
 ## Output
@@ -83,7 +85,7 @@ The script displays:
 ## Example
 
 ```bash
-python warmer/burpee-requests.py --files urls.csv --threads 10
+python warmer.py --files urls.csv --threads 10
 ```
 
 This will:
