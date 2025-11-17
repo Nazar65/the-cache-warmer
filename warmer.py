@@ -142,6 +142,12 @@ def main():
     parser.add_argument(
         "--threads", type=int, default=5, help="Number of threads to use (default: 5)"
     )
+    parser.add_argument(
+        "--timeout",
+        type=int,
+        default=10,
+        help="Timeout for the request in seconds (default: 10)",
+    )
     args = parser.parse_args()
 
     # Validate threads parameter
@@ -186,7 +192,7 @@ def main():
             progress,
             task,
             max_workers=args.threads,
-            timeout=10,
+            timeout=args.timeout,
             custom_headers=config.get("headers", {}),
             custom_cookies=config.get("cookies", {}),
         )
