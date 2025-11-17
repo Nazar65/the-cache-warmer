@@ -8,6 +8,8 @@ This tool sends HTTP GET requests to a list of URLs to warm up the cache and det
 
 ![screenshot](images/screenshot.png)
 
+![screenshot](images/screenshot2.png)
+
 ## Requirements
 
 - Python 3.6+
@@ -69,7 +71,7 @@ https://example.com/page3
 
 ### Log Files
 
-Logs are written to the console using the Rich logging handler. No separate log files are created by default. If you need to redirect logs to a file, you can do so using shell redirection:
+Logs are written to the warmer.log pointing all execution errors. No separate log files are created by default. If you need to redirect logs to a file, you can do so using shell redirection:
 
 ```bash
 python warmer.py --files urls.csv > app.log 2>&1

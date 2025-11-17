@@ -9,7 +9,6 @@ from concurrent.futures import ThreadPoolExecutor
 import requests
 from rich import align, print
 from rich.live import Live
-from rich.logging import RichHandler
 from rich.panel import Panel
 from rich.progress import Progress
 from rich.table import Table
@@ -51,14 +50,16 @@ def warm_url(url, progress, task, headers=None, cookies=None, timeout=10):
 
 
 def get_logger() -> logging.Logger:
-    FORMAT = "%(message)s"
+
     logging.basicConfig(
-        level="NOTSET",
-        format=FORMAT,
-        datefmt="[%X]",
-        handlers=[RichHandler()],
+        filename="warmer.log",
+        filemode="a",
+        format="%(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S",
+        level=logging.DEBUG,
     )
-    return logging.getLogger("rich")
+
+    return logging.getLogger("warmer")
 
 
 def read_urls_from_csv(filename):
